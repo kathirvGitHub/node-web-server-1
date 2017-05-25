@@ -2,6 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 //var jdeLoginURL = 'http://172.19.2.24:9082/jderest/tokenrequest';
 var jdeLoginURL = 'http://aisdv910.forza-solutions.com:9082/jderest/tokenrequest';
 var jdeLoginData = {
@@ -56,4 +58,6 @@ app.get('/about', (req, res) => {
     });
 })
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log (`Server is running on port ${port}`)
+});
